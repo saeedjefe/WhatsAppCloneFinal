@@ -24,7 +24,7 @@
         app:srcCompat="@android:drawable/ic_lock_lock" />
 
     <EditText
-        android:id="@+id/edtUser"
+        android:id="@+id/user"
         android:layout_width="217dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/pass"
         android:layout_width="217dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,7 +49,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUser" />
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/btnSigUp"
+        android:id="@+id/btnSignUp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,15 +80,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
 
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="444dp"
         android:alpha="0.9"
         android:background="@color/colorPrimary"
         android:text="Already A User!!"
@@ -96,5 +94,5 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSigUp" />
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

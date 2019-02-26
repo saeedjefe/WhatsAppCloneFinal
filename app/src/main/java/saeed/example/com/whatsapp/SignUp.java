@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
@@ -28,14 +27,20 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         ParseInstallation.getCurrentInstallation().saveInBackground();
 
         edtEmail = findViewById( R.id.edtEmail );
-        edtUser = findViewById( R.id.edtUser );
-        edtPassword = findViewById( R.id.edtPassword );
-        btnSigUp = findViewById( R.id.btnSigUp );
+        edtUser = findViewById( R.id.user );
+        edtPassword = findViewById( R.id.pass );
+        btnSigUp = findViewById( R.id.btnSignUp );
         btnLogIn = findViewById( R.id.btnLogIn );
 
         btnSigUp.setOnClickListener( this );
         btnLogIn.setOnClickListener( this );
 
+        if(ParseUser.getCurrentUser() != null)
+        {
+            Intent intent = new Intent(SignUp.this, UsersList.class);
+            startActivity( intent );
+
+        }
 
     }
 
@@ -44,7 +49,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         switch (v.getId())
         {
-            case R.id.btnSigUp:
+            case R.id.btnSignUp:
 
                 final ProgressDialog progressDialog = new ProgressDialog( SignUp.this);
                 progressDialog.setMessage( "signing up" );
@@ -62,6 +67,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                         if(e==null)
                         {
                             Toast.makeText( SignUp.this, "you are signed up", Toast.LENGTH_LONG ).show();
+
+                            Intent intent = new Intent(SignUp.this, UsersList.class);
+                            startActivity( intent );
                         }
                         else {
 
